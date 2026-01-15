@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "todos",
+  "info": {
+    "singularName": "todo",
+    "pluralName": "todos",
+    "displayName": "Todo"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "string",
+      "required": true
+    },
+    "dateDebut": {
+      "type": "datetime"
+    },
+    "dateFin": {
+      "type": "datetime"
+    },
+    "finish": {
+      "type": "boolean"
+    },
+    "list": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::list.list",
+      "inversedBy": "todos"
+    },
+    "employe": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::employe.employe",
+      "inversedBy": "todos"
+    }
+  }
+}
