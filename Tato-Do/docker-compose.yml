@@ -15,7 +15,7 @@ services:
       JWT_SECRET: 5K8vPxqZ9mYjL3nR7tWfX2cB4dE6gH8k
       ADMIN_JWT_SECRET: 9R3mK5pL7qX2vB4nZ6tW8cY1dF3hJ5g
       APP_KEYS: K8m2vL5pR9qX3nB7tW1cZ4dY6fH9jG2k,R5pL9qX2vB4nZ7tW1cY3dF6hJ8gK1m5p,X3nB7tW1cZ5dY9fH2jG6kM8p2vL4qR7x,B4nZ8tW2cY6dF1hJ4gK7m9p3vL5qR8x1
-      NODE_ENV: production
+      NODE_ENV: development
     volumes:
       #- ./config:/opt/app/config
       - ./src:/opt/app/src
