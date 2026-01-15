@@ -8,13 +8,21 @@ ENV NODE_ENV=${NODE_ENV}
 
 WORKDIR /opt/
 COPY package.json package-lock.json ./
+
+# Supprimer le package-lock s'il existe et réinstaller
+RUN rm -f package-lock.json
 RUN npm install -g node-gyp
-RUN npm config set fetch-retry-maxtimeout 600000 -g && npm install
+RUN npm config set fetch-retry-maxtimeout 600000 -g
+RUN npm install
 
 ENV PATH=/opt/node_modules/.bin:$PATH
 
 WORKDIR /opt/app
 COPY . .
+
+# Supprimer node_modules s'il existe dans le projet
+RUN rm -rf node_modules .cache build
+
 RUN chown -R node:node /opt/app
 USER node
 
