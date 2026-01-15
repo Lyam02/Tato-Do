@@ -23,7 +23,8 @@
       #- ./yarn.lock:/opt/yarn.lock
       #- ./.env:/opt/app/.env
       #- ./public/uploads:/opt/app/public/uploads
-      - strapi-src:/opt/app/src              # ✅ Persiste les content-types
+      - strapi-src:/opt/app/src
+      - strapi-config:/opt/app/config
       - strapi-uploads:/opt/app/public/uploads
     ports:
       - "1337:1337"
@@ -53,6 +54,9 @@
 
 volumes:
   strapi-data:
+  strapi-src:
+  strapi-config:
+  strapi-uploads:
 
 networks:
   strapi:
