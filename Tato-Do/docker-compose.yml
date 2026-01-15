@@ -1,4 +1,4 @@
-#services:
+services:
   strapi:
     container_name: strapi
     build: .
