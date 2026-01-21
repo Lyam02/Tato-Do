@@ -46,7 +46,7 @@ services:
       MYSQL_DATABASE: tatodo
     volumes:
       - strapi-data:/var/lib/mysql
-      #- ./data:/var/lib/mysql # if you want to use a bind folder
+      #- ./data:/var/lib/mysql
     ports:
       - "3307:3306"
     networks:
